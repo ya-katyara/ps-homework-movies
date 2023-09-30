@@ -1,0 +1,18 @@
+.button {
+    display: flex;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 12px;
+    border: 2px solid #7B6EF6;
+    background: #7B6EF6;
+    color: #FFF;
+    transition: background ease-in-out 0.15s;
+}
+
+.button:hover {
+    border-color: rgb(123 110 246 / 60%);
+    background: rgb(123 110 246 / 60%);
+}
