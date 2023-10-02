@@ -1,7 +1,7 @@
 import './Button.css';
 
-function Button({children}) {
-    return <button className='button'>{children}</button>;
+function Button({onClick, children}) {
+    return <button className='button' onClick={onClick}>{children}</button>;
 }
 
 export default Button;
