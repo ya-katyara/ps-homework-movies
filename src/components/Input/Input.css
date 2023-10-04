@@ -8,6 +8,13 @@
     min-width: 350px;
 }
 
+.input::placeholder {
+    color: #475069;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
 .input_wrapper {
     position: relative;
 }
