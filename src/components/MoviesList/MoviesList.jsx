@@ -80,7 +80,7 @@ function MoviesList() {
 
     const onAddToFavorites = (id) => {
         setMovies(oldState => {
-            return [...oldState].map(item => {
+            return oldState.map(item => {
                 if (item.id === id) {
                     return {
                         ...item,

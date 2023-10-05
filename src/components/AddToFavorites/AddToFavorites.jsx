@@ -2,7 +2,7 @@ import './AddToFavorites.css';
 
 function AddToFavorites({id, isAdded, onAdd}) {
     const onClick = () => {
-        onAdd && onAdd(id);
+        onAdd?.(id);
     };
 
     return <span className={`add-to-favorites-btn${isAdded ? ' added' : ''}`} onClick={onClick}>

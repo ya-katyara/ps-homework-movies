@@ -15,7 +15,7 @@ function App() {
         <>
             <Header />
             <div className='page-heading'>
-                <Heading level="1">Поиск</Heading>
+                <Heading>Поиск</Heading>
                 <Paragraph>
                     Введите название фильма, сериала или мультфильма для поиска и
                     добавления в избранное.
