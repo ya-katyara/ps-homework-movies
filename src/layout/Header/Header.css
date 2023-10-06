@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    margin-bottom: 50px;
+}
+
+.links {
+    display: flex;
+    gap: 24px;
+    padding: 4px 0;
+}
+
+.movies_counter {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: #7B6EF6;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.28px;
+    border-radius: 100%;
+    text-align: center;
+}

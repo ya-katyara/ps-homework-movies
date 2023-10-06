@@ -1,0 +1,18 @@
+.link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #A8AEBF;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 8px;
+}
+
+.link:hover {
+    color: #fff;
+}
+
+.link_icon {
+    display: flex;
+}

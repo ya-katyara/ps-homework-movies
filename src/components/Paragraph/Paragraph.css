@@ -1,0 +1,13 @@
+.paragraph {
+    color: #8E95A9;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.regular {
+    font-size: 16px;
+}
+
+.large {
+    font-size: 20px;
+}
