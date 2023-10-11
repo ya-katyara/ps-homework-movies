@@ -10,7 +10,7 @@
     backdrop-filter: blur(40px);
 }
 
-.movie-card__rating {
+.rating {
     position: absolute;
     top: 16px;
     left: 16px;
@@ -29,7 +29,7 @@
     line-height: 24px;
 }
 
-.movie-card__image {
+.image {
     height: 400px;
     width: 266px;
     border-radius: 8px;
