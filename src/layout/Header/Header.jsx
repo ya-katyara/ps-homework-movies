@@ -1,24 +1,39 @@
 import LinkButton from '../../components/LinkButton/LinkButton';
-import './Header.css';
+import styles from './Header.module.css';
 
-function Header() {
+function Header({ user, onLogout }) {
     return (
-        <header className='header'>
-            <a href='/' className='logo'><img src='/logo.svg' alt='логотип' /></a>
-            <div className='links'>
-                <LinkButton url='#'>Поиск фильмов</LinkButton>
-                <LinkButton 
-                    url='#' 
-                    icon={<span className='movies_counter'>2</span>}
+        <header className={styles.header}>
+            <a href="/" className={styles.logo}>
+                <img src="/logo.svg" alt="логотип" />
+            </a>
+            <div className={styles.links}>
+                <LinkButton url="#">Поиск фильмов</LinkButton>
+                <LinkButton
+                    url="#"
+                    icon={<span className={styles.movies_counter}>2</span>}
                 >
                     Мои фильмы
                 </LinkButton>
-                <LinkButton 
-                    url='#' 
-                    icon={<img src='/img/login.svg' />}
-                >
-                    Войти
-                </LinkButton>
+                {user && (
+                    <>
+                        <LinkButton url="#" icon={<img src="/img/user.svg" />}>
+                            {user.login}
+                        </LinkButton>
+                        <LinkButton
+                            url="#"
+                            icon={<img src="/img/login.svg" />}
+                            onClick={onLogout}
+                        >
+                            Выйти
+                        </LinkButton>
+                    </>
+                )}
+                {!user && (
+                    <LinkButton url="#" icon={<img src="/img/login.svg" />}>
+                        Войти
+                    </LinkButton>
+                )}
             </div>
         </header>
     );
