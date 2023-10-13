@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import LinkButton from '../../components/LinkButton/LinkButton';
 import styles from './Header.module.css';
+import { UserContext } from '../../context/user.context';
 
-function Header({ user, onLogout }) {
+function Header() {
+    const { user, onLogout } = useContext(UserContext);
+
     return (
         <header className={styles.header}>
             <a href="/" className={styles.logo}>

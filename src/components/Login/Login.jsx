@@ -1,10 +1,11 @@
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import Button from '../Button/Button';
 import Heading from '../Heading/Heading';
 import Input from '../Input/Input';
-// import styles from './Login.module.css';
+import { UserContext } from '../../context/user.context';
 
-function Login({ onLogin }) {
+function Login() {
+    const { user, handleLogin } = useContext(UserContext);
     const [login, setLogin] = useState('');
     const inputRef = useRef();
 
@@ -19,8 +20,12 @@ function Login({ onLogin }) {
             return;
         }
         setLogin('');
-        onLogin?.(login);
+        handleLogin?.(login);
     };
+
+    if (user) {
+        return <></>;
+    }
 
     return (
         <div>
