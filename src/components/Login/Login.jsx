@@ -1,11 +1,11 @@
-import { useContext, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Button from '../Button/Button';
 import Heading from '../Heading/Heading';
 import Input from '../Input/Input';
-import { UserContext } from '../../context/user.context';
+import { useAuth } from '../../hooks/useAuth.hook';
 
 function Login() {
-    const { user, handleLogin } = useContext(UserContext);
+    const { user, handleLogin } = useAuth();
     const [login, setLogin] = useState('');
     const inputRef = useRef();
 

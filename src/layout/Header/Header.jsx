@@ -1,10 +1,9 @@
-import { useContext } from 'react';
 import LinkButton from '../../components/LinkButton/LinkButton';
 import styles from './Header.module.css';
-import { UserContext } from '../../context/user.context';
+import { useAuth } from '../../hooks/useAuth.hook';
 
 function Header() {
-    const { user, onLogout } = useContext(UserContext);
+    const { user, onLogout } = useAuth();
 
     return (
         <header className={styles.header}>
