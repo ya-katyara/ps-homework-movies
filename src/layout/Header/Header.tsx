@@ -11,20 +11,20 @@ function Header() {
                 <img src="/logo.svg" alt="логотип" />
             </a>
             <div className={styles.links}>
-                <LinkButton url="#">Поиск фильмов</LinkButton>
+                <LinkButton href="#">Поиск фильмов</LinkButton>
                 <LinkButton
-                    url="#"
+                    href="#"
                     icon={<span className={styles.movies_counter}>2</span>}
                 >
                     Мои фильмы
                 </LinkButton>
                 {user && (
                     <>
-                        <LinkButton url="#" icon={<img src="/img/user.svg" />}>
+                        <LinkButton href="#" icon={<img src="/img/user.svg" />}>
                             {user.login}
                         </LinkButton>
                         <LinkButton
-                            url="#"
+                            href="#"
                             icon={<img src="/img/login.svg" />}
                             onClick={onLogout}
                         >
@@ -33,7 +33,7 @@ function Header() {
                     </>
                 )}
                 {!user && (
-                    <LinkButton url="#" icon={<img src="/img/login.svg" />}>
+                    <LinkButton href="#" icon={<img src="/img/login.svg" />}>
                         Войти
                     </LinkButton>
                 )}

@@ -8,7 +8,7 @@ import { UserContextProvider } from './context/user.context';
 import Header from './layout/Header/Header';
 
 function App() {
-    const onSearchBtnClick = (value) => {
+    const onSearchBtnClick = (value: string) => {
         console.log(value);
         console.log('Search button clicked!');
     };
