@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #A8AEBF;
+    color: var(--text-secondary-color);
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
@@ -10,7 +10,7 @@
 }
 
 .link:hover {
-    color: #fff;
+    color: var(--white-color);
 }
 
 .link_icon {

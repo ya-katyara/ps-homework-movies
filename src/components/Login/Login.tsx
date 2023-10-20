@@ -2,7 +2,7 @@ import { ChangeEvent, useRef, useState } from 'react';
 import Button from '../Button/Button';
 import Heading from '../Heading/Heading';
 import Input from '../Input/Input';
-import { useAuth } from '../../hooks/useAuth.hook';
+import { useAuth } from '../../hooks';
 
 function Login() {
     const { user, handleLogin } = useAuth();

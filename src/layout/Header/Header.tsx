@@ -1,6 +1,6 @@
 import LinkButton from '../../components/LinkButton/LinkButton';
 import styles from './Header.module.css';
-import { useAuth } from '../../hooks/useAuth.hook';
+import { useAuth } from '../../hooks';
 
 function Header() {
     const { user, onLogout } = useAuth();

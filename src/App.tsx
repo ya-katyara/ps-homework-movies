@@ -1,10 +1,9 @@
-import './App.css';
 import Heading from './components/Heading/Heading';
 import Login from './components/Login/Login';
 import MoviesList from './components/MoviesList/MoviesList';
 import Paragraph from './components/Paragraph/Paragraph';
 import Search from './components/Search/Search';
-import { UserContextProvider } from './context/user.context';
+import { UserContextProvider } from './context';
 import Header from './layout/Header/Header';
 
 function App() {
