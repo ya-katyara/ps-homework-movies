@@ -1,7 +1,7 @@
+import { useState } from 'react';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
-import './Search.css';
-import { useState } from 'react';
+import styles from './Search.module.css';
 
 function Search({onSearch}) {
     const [value, setValue] = useState('');
@@ -15,7 +15,7 @@ function Search({onSearch}) {
     };
 
     return (
-        <div className="search">
+        <div className={styles.search}>
             <Input
                 value={value}
                 onChange={onInputChange}

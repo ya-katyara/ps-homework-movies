@@ -1,9 +1,9 @@
-import './LinkButton.css';
+import styles from './LinkButton.module.css';
 
-function LinkButton({url, icon = null, children}) {
-    return <a href={url} className='link'>
+function LinkButton({url, icon = null, onClick, children}) {
+    return <a href={url} className={styles.link} onClick={onClick}>
         {children}
-        {icon && <span className='link_icon'>{icon}</span>}
+        {icon && <span className={styles.link_icon}>{icon}</span>}
     </a>;
 }
 

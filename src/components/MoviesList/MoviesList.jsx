@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import MovieCard from '../MovieCard/MovieCard';
-import './MoviesList.css';
+import styles from './MoviesList.module.css';
 
 const MOVIES = [
     {
@@ -94,7 +94,7 @@ function MoviesList() {
     };
 
     return (
-        <div className='movies-list'>
+        <div className={styles['movies-list']}>
             {movies.map(({ id, title, img_url, isAdded, rating }) => (
                 <MovieCard
                     key={id}
