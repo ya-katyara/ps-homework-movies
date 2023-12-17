@@ -1,11 +1,23 @@
-import { createContext, useState, useEffect } from 'react';
-import { useLocalStorage } from '../hooks/useLocalStorage.hook';
+import { createContext, useState, useEffect, ReactNode, useCallback } from 'react';
+import { useLocalStorage } from '../hooks';
 
-export const UserContext = createContext({user: null});
+export const UserContext = createContext<IUserContext>({ user: null });
 
-export const UserContextProvider = ({children}) => {
-    const [user, setUser] = useState(null);
-    const [users, saveUsers] = useLocalStorage('users');
+interface IUserContext {
+    user: User | null;
+    setUser?: (user: User | null) => void;
+    handleLogin?: (login: string) => void;
+    onLogout?: () => void
+}
+
+interface User {
+    login: string,
+    isLogined: boolean
+}
+
+export const UserContextProvider = ({children}:{children: ReactNode}) => {
+    const [user, setUser] = useState<User | null>(null);
+    const [users, saveUsers] = useLocalStorage<User>('users');
 
     useEffect(() => {
         const currentUser = users.find((u) => u.isLogined);
@@ -16,7 +28,7 @@ export const UserContextProvider = ({children}) => {
         }
     }, [users, setUser]);
 
-    const handleLogin = (login) => {
+    const handleLogin = useCallback((login: string) => {
         const newUser = { login, isLogined: true };
         if (users.length > 0) {
             const userIdx = users.findIndex((u) => u.login === login);
@@ -30,16 +42,16 @@ export const UserContextProvider = ({children}) => {
         } else {
             saveUsers([newUser]);
         }
-    };
+    }, [users]);
 
-    const onLogout = () => {
+    const onLogout = useCallback(() => {
         saveUsers(
             users.map((u) => ({
                 ...u,
                 isLogined: false
             }))
         );
-    };
+    }, [users]);
 
     return (
         <UserContext.Provider value={{ user, setUser, handleLogin, onLogout }}>

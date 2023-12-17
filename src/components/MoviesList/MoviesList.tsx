@@ -78,10 +78,10 @@ const MOVIES = [
 function MoviesList() {
     const [movies, setMovies] = useState(MOVIES);
 
-    const onAddToFavorites = (id) => {
+    const onAddToFavorites = (id: string) => {
         setMovies(oldState => {
             return oldState.map(item => {
-                if (item.id === id) {
+                if (item.id.toString() === id) {
                     return {
                         ...item,
                         isAdded: !item.isAdded
@@ -98,7 +98,7 @@ function MoviesList() {
             {movies.map(({ id, title, img_url, isAdded, rating }) => (
                 <MovieCard
                     key={id}
-                    id={id}
+                    id={id.toString()}
                     title={title}
                     img={img_url}
                     isAdded={isAdded}

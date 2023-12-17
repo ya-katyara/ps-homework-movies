@@ -1,22 +1,22 @@
-import { useRef, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import Button from '../Button/Button';
 import Heading from '../Heading/Heading';
 import Input from '../Input/Input';
-import { useAuth } from '../../hooks/useAuth.hook';
+import { useAuth } from '../../hooks';
 
 function Login() {
     const { user, handleLogin } = useAuth();
     const [login, setLogin] = useState('');
-    const inputRef = useRef();
+    const inputRef = useRef<HTMLInputElement>(null);
 
-    const onChange = (evt) => {
+    const onChange = (evt: ChangeEvent<HTMLInputElement>) => {
         const { value } = evt.target;
         setLogin(value);
     };
 
     const onClick = () => {
         if (!login.length) {
-            inputRef.current.focus();
+            inputRef.current?.focus();
             return;
         }
         setLogin('');
@@ -29,7 +29,7 @@ function Login() {
 
     return (
         <div>
-            <Heading level={1}>Вход</Heading>
+            <Heading level='1'>Вход</Heading>
             <Input
                 type="text"
                 name="login"

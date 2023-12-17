@@ -1,7 +1,8 @@
 import cn from 'classnames';
 import styles from './AddToFavorites.module.css';
+import { AddToFavoriesProps } from './AddToFavorites.props';
 
-function AddToFavorites({ id, isAdded, onAdd }) {
+function AddToFavorites({ id, isAdded, onAdd }: AddToFavoriesProps) {
     const onClick = () => {
         onAdd?.(id);
     };

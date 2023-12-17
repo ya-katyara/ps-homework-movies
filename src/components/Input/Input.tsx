@@ -1,7 +1,8 @@
 import { forwardRef } from 'react';
 import styles from './Input.module.css';
+import { InputProps } from './Input.props';
 
-const Input = forwardRef(function Input({ placeholder, icon, onChange, value, ...props }, ref) {
+const Input = forwardRef<HTMLInputElement, InputProps>(function Input({ placeholder, icon = undefined, onChange, value, ...props }, ref) {
     return (
         <div className={styles.input_wrapper}>
             {icon && <span className={styles.input_icon}>{icon}</span>}
